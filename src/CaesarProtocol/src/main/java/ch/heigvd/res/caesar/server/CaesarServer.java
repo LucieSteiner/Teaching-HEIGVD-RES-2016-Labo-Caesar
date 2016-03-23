@@ -19,6 +19,8 @@ public class CaesarServer {
     System.setProperty("java.util.logging.SimpleFormatter.format", "[%1$tH:%1$tM:%1$tS::%1$tL] Server > %5$s%n");
     LOG.info("Caesar server starting...");
     LOG.info("Protocol constant: " + Protocol.A_CONSTANT_SHARED_BY_CLIENT_AND_SERVER);
+    MultiThreadedServer server = new MultiThreadedServer(Protocol.A_CONSTANT_SHARED_BY_CLIENT_AND_SERVER);
+    server.serveClients();
   }
   
 }
